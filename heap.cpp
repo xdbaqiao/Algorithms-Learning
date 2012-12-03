@@ -1,3 +1,4 @@
+//建堆，堆排序
 #include <iostream>
 #include <stdio.h>
 #define Left(i) 2*i+1
@@ -6,24 +7,24 @@ using namespace std;
 
 int a[]={4,1,3,2,16,9,10,14,8,7};
 int la = sizeof(a)/sizeof(a[0]);
-void MaxHeapfiy(int *A,int i)
+void MaxHeapfiy(int *a,int i)
 {
     int l = Left(i);
     int r = Right(i);
     int largest;
-    if(l<la && A[l]>A[i])
+    if(l<la && a[l]>a[i])
         largest = l;
     else
         largest = i;
-    if(r<la && A[r]>A[largest])
+    if(r<la && a[r]>a[largest])
         largest = r;
     if(largest != i)
     {
         int temp;
-        temp = A[largest];
-        A[largest] = A[i];
-        A[i] = temp;
-        MaxHeapfiy(A, largest);
+        temp = a[largest];
+        a[largest] = a[i];
+        a[i] = temp;
+        MaxHeapfiy(a, largest);
     }
 }
 
