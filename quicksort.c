@@ -16,6 +16,10 @@ int Partition(int *b, int d, int c)
             b[j] = b[i];
             b[i] = tmp;
         }
+        //int f;
+        //for(f=0;f<8;f++)
+        //    printf("%d ", b[f]);
+        //printf("\n");
     }
     b[c] = b[i+1];
     b[i+1] = key;
