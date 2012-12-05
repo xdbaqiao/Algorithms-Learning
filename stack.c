@@ -38,8 +38,6 @@ void Print()
     printf("\n");
 }
 
-
-
 int main()
 {
     P = -1;
@@ -57,3 +55,12 @@ int main()
     Print();
     return 0;
 }
+
+/***result****
+ 4 
+ 4 1 
+ 4 1 3 
+ 4 1 
+ 4 1 8 
+ 4 1
+ ************/
