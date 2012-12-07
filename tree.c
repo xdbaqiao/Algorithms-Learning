@@ -1,4 +1,14 @@
 //二叉查找树
+/***********result****************
+ *
+ * 中序遍历:3 5 6 7 10 12 13 15 16 18 20 23 
+ * 最小值：3
+ * 最大值：23
+ * 搜索到值：12
+ * 值12的中序遍历后继是：13
+ * 删除6后中序遍历:3 5 7 10 12 13 15 16 18 20 23
+ *
+ ****************************************/
 
 #include <stdio.h>
 #include <malloc.h>
@@ -92,15 +102,15 @@ struct tree *TreeSuccessor(struct tree *T)
 struct tree *TreeDelect(struct tree **T, struct tree **z)
 {
     struct tree *del, *con;
-    if((*z)->left ==NULL || (*z)->right==NULL)
+    if((*z)->left ==NULL || (*z)->right==NULL)                              //首先确定需要删除的是什么
         del = *z;
     else
         del = TreeSuccessor(*z);
-    if(del->left != NULL)
+    if(del->left != NULL)                                                  //然后确定需要连接的是什么
         con = del->left;
     else
         con = del->right;
-    if(con != NULL)
+    if(con != NULL)                                                         //连接
         con->parent = del->parent;
     if(del->parent == NULL)
         *T = con;
@@ -110,7 +120,7 @@ struct tree *TreeDelect(struct tree **T, struct tree **z)
             del->parent->right = con;
         else
             del->parent->left = con;
-        if(del != *z)
+        if(del != *z)                                                       //区分删除的是否是后继，是后继就替代
             (*z)->key = del->key;
     }
     return del;
