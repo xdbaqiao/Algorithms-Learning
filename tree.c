@@ -198,7 +198,7 @@ void TreeInsert(struct tree *T, int a)
     z->key = a;
     z->parent = y;
     if(y==NULL)
-        T = z;                     //地址是形参，不会改变!!
+        T = z;                     //地址是形参，改变不会保留!!
     else 
     {
         printf("%d ", y->key);
