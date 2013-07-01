@@ -7,6 +7,14 @@
 
 #include <stdio.h>
 
+void swap(int *a, int *b)
+{
+    int tmp;
+    tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
 int main(int argc, char *argv[])
 {
     int a[10] = {10,9,8,7,6,5,4,3,2,12};
@@ -16,9 +24,7 @@ int main(int argc, char *argv[])
         tmp = i;
         while(i>0 && a[i-1]>a[i])
         {
-            b = a[i-1];
-            a[i-1] = a[i];
-            a[i] = b;
+            swap(&a[i], &a[i-1]);
             i--;
         }
         i = tmp;
