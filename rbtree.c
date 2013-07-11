@@ -160,7 +160,7 @@ void RBInsertFixup(struct RBtree **T, struct RBtree **z)
 void RBTreeInsert(struct RBtree **T, int a)                   
 {
     struct RBtree *x, *y;
-    struct RBtree *z = (struct RBtree *)malloc(sizeof(struct RBtree));
+    struct RBtree *z = (struct RBtree *)malloc(sizeof(struct RBtree));   //必须分配内存
     y = NIL;
     x = *T;
     z->parent=z->left=z->right=NIL;

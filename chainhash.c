@@ -85,8 +85,8 @@ int main()
         printf("Malloc Error.\n");
     for(i=0;i<ts;i++)
     {
-        //H->nd[i] = (struct Nodelist *)malloc(ts*sizeof(struct Nodelist));
-        H->nd[i] = H->nd[0] + i;
+        H->nd[i] = (struct Nodelist *)malloc(ts*sizeof(struct Nodelist));
+        //H->nd[i] = H->nd[0] + i;
         H->nd[i]->next = NULL;
     }
     Insert(H, 19);

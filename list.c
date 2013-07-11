@@ -84,13 +84,13 @@ int main()
     tmp = ListSearch(a1, 19);
     printf("Search index is %d.\n", tmp);
     ListDelect(a1, 3);
-    printf("Delect index %d:\n", 3);
+    printf("Delete index %d:\n", 3);
     Print();
     ListDelect(a1, 6);
-    printf("Delect index %d:\n", 6);
+    printf("Delete index %d:\n", 6);
     Print();
     ListDelect(a1, 9);
-    printf("Delect index %d:\n", 9);
+    printf("Delete index %d:\n", 9);
     Print();
     printf("freenum is %d\n", free1);
     ListInsert(a1, 111);

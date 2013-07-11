@@ -1,4 +1,5 @@
 //Hash
+//
 #include <stdio.h>
 
 int Hash(char *a, int b)
